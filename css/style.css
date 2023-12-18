@@ -1,0 +1,78 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+html {
+  height: 100%; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none; }
+
+img {
+  display: block; }
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'RF Dewi';
+  src: local("RF Dewi Black"), local("RF-Dewi-Black"), url("/fonts/RFDewi-Black.woff2") format("woff2"), url("/fonts/RFDewi-Black.woff") format("woff"), url("/fonts/RFDewi-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: bold; }
+@font-face {
+  font-family: 'RF Dewi';
+  src: local("RF Dewi Bold"), local("RF-Dewi-Bold"), url("/fonts/RFDewi-Bold.woff2") format("woff2"), url("/fonts/RFDewi-Black.woff") format("woff"), url("/fonts/RFDewi-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: semibold; }
+@font-face {
+  font-family: 'RF Dewi';
+  src: local("RF Dewi Ultralight"), local("RF-Dewi-Ultralight"), url("/fonts/RFDewi-Ultralight.woff2") format("woff2"), url("/fonts/RFDewi-Ultralight.woff") format("woff"), url("/fonts/RFDewi-Ultralight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal; }
+body {
+  font-family: 'RF Dewi'; }
+
+/*# sourceMappingURL=style.css.map */
