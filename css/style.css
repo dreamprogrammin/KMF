@@ -72,7 +72,16 @@ img {
   src: local("RF Dewi Ultralight"), local("RF-Dewi-Ultralight"), url("/fonts/RFDewi-Ultralight.woff2") format("woff2"), url("/fonts/RFDewi-Ultralight.woff") format("woff"), url("/fonts/RFDewi-Ultralight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal; }
+svg *[fill] {
+  fill: currentColor; }
+
+svg *[stroke] {
+  stroke: currentColor; }
+
 body {
   font-family: 'RF Dewi'; }
+
+.container {
+  padding: 0 10px; }
 
 /*# sourceMappingURL=style.css.map */

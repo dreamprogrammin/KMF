@@ -1,6 +1,16 @@
+$color-hover: #F86436;
+$color-title: #393939;
+$color-text: #595959;
+$color-decor: #000;
+$color-vector: #BABABA;
+$color-background: #fff;
+
 @mixin flex-container($jc, $ai){
     display: flex;
     justify-content: $jc;
     align-items: $ai;
 }
+
+svg *[fill] { fill: currentColor; }
+svg *[stroke] {stroke: currentColor;}
 
