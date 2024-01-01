@@ -17,71 +17,302 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 html {
-  height: 100%; }
+  height: 100%;
+}
 
 body {
-  line-height: 1; }
+  line-height: 1;
+}
 
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none; }
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 button {
   cursor: pointer;
   border: none;
-  outline: none; }
+  outline: none;
+}
 
 img {
-  display: block; }
+  display: block;
+}
 
 *,
 *::after,
 *::before {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 @font-face {
   font-family: 'RF Dewi';
   src: local("RF Dewi Black"), local("RF-Dewi-Black"), url("/fonts/RFDewi-Black.woff2") format("woff2"), url("/fonts/RFDewi-Black.woff") format("woff"), url("/fonts/RFDewi-Black.ttf") format("truetype");
   font-weight: 900;
-  font-style: bold; }
+  font-style: bold;
+}
 @font-face {
   font-family: 'RF Dewi';
   src: local("RF Dewi Bold"), local("RF-Dewi-Bold"), url("/fonts/RFDewi-Bold.woff2") format("woff2"), url("/fonts/RFDewi-Black.woff") format("woff"), url("/fonts/RFDewi-Bold.ttf") format("truetype");
   font-weight: 700;
-  font-style: semibold; }
+  font-style: semibold;
+}
 @font-face {
   font-family: 'RF Dewi';
   src: local("RF Dewi Ultralight"), local("RF-Dewi-Ultralight"), url("/fonts/RFDewi-Ultralight.woff2") format("woff2"), url("/fonts/RFDewi-Ultralight.woff") format("woff"), url("/fonts/RFDewi-Ultralight.ttf") format("truetype");
   font-weight: 200;
-  font-style: normal; }
+  font-style: normal;
+}
 svg *[fill] {
-  fill: currentColor; }
+  fill: currentColor;
+}
 
 svg *[stroke] {
-  stroke: currentColor; }
+  stroke: currentColor;
+}
 
 body {
-  font-family: 'RF Dewi'; }
+  font-family: 'RF Dewi';
+  background: #F6F6F6;
+}
 
 .container {
-  padding: 0 10px; }
+  padding: 0 10px;
+}
+
+.header__top {
+  position: relative;
+  width: 100%;
+}
+.header__top::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid #BABABA;
+}
+.header__top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.nav__top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.list__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.list__menu-item {
+  padding: 27px 45px;
+  position: relative;
+}
+.list__menu-item::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #BABABA;
+}
+.list__item-link {
+  color: #000;
+  font-weight: 300;
+}
+.list__item-link:hover {
+  color: #F86436;
+}
+
+.search__box-button {
+  width: 76px;
+  height: 71px;
+  background-color: inherit;
+  border-left: 1px solid #BABABA;
+}
+.search__box-button:hover {
+  color: white;
+  background-color: #F86436;
+}
+.search__container {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1px;
+  border-left: 1px solid #BABABA;
+}
+.search__container.active {
+  display: block;
+}
+.search__icon {
+  margin-left: 20px;
+}
+.search__box-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  height: 100%;
+  background-color: #F6F6F6;
+  position: relative;
+}
+.search__input {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: inherit;
+  caret-color: #F86436;
+}
+.search__input::placeholder {
+  font-size: 14px;
+  color: #BEBEBE;
+}
+.search__button-input {
+  width: 76px;
+  height: 100%;
+  background-color: inherit;
+}
+.search__button-input:hover {
+  color: #F86436;
+}
+.search__result-list {
+  position: absolute;
+}
+
+.language__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  border-left: 1px solid #BABABA;
+}
+.language__list-item {
+  position: relative;
+}
+.language__list-item:hover .language__sublist {
+  display: block;
+}
+.language__item-link {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: #393939;
+  text-align: center;
+  width: 76px;
+  height: 71px;
+  line-height: 70px;
+}
+.language__item-link:hover {
+  background-color: #F86436;
+  color: #fff;
+}
+.language__sublist {
+  position: absolute;
+  width: 100%;
+  display: none;
+}
+.language__sublist-link {
+  display: block;
+  padding: 17px;
+  text-align: center;
+  color: #BABABA;
+  background-color: #fff;
+}
+.language__sublist-link:hover {
+  color: #F86436;
+}
+
+.action__burger {
+  width: 87px;
+  height: 71px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid #BABABA;
+}
+.action__burger:hover {
+  background-color: #F86436;
+  color: #fff;
+}
+
+.burger__menu {
+  position: relative;
+  height: 12px;
+  width: 23px;
+}
+.burger__menu::after, .burger__menu::before, .burger__menu .burger-line {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+}
+.burger__menu::before {
+  top: 0;
+}
+.burger__menu .burger-line {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.burger__menu::after {
+  bottom: 0;
+}
+.burger__menu.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+.burger__menu.active .burger-line {
+  opacity: 0;
+}
+.burger__menu.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
 
 /*# sourceMappingURL=style.css.map */
