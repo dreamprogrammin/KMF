@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'RF Dewi';
+    src: local('RF Dewi Semibold'), local('RF-Dewi-Semibold'),
+        url('RFDewi-Semibold.woff2') format('woff2'),
+        url('RFDewi-Semibold.woff') format('woff'),
+        url('RFDewi-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
