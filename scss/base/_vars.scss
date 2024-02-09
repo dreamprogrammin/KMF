@@ -1,17 +1,28 @@
-$color-hover: #F86436;
+$color-hover: #f86436;
 $color-title: #393939;
 $color-text: #595959;
 $color-decor: #000;
-$color-vector: #BABABA;
+$color-vector: #bababa;
 $color-background: #fff;
-$color-body: #F6F6F6;
+$color-body: #f6f6f6;
+$color-subtext: #aeaeae;
 
-@mixin flex-container($jc, $ai){
-    display: flex;
-    justify-content: $jc;
-    align-items: $ai;
+@mixin flex-container($jc, $ai) {
+	display: flex;
+	justify-content: $jc;
+	align-items: $ai;
 }
 
-svg *[fill] { fill: currentColor; }
-svg *[stroke] {stroke: currentColor;}
+svg *[fill] {
+	fill: currentColor;
+}
+svg *[stroke] {
+	stroke: currentColor;
+}
 
+$breackpoints: (
+	sm: 640px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+);

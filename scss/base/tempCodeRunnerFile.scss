@@ -1,0 +1,5 @@
+@mixin lg {
+	@media (max-width: map-get($breackpoints, lg) - 0.2px) and (min-width: map-get($breackpoints, md)) {
+		@content;
+	}
+}

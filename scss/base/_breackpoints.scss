@@ -1,0 +1,65 @@
+// Выше от заданной ширины
+
+@mixin sm-u {
+	@media (min-width: map-get($breackpoints, sm)) {
+		@content;
+	}
+}
+
+@mixin md-u {
+	@media (min-width: map-get($breackpoints, md)) {
+		@content;
+	}
+}
+
+@mixin lg-u {
+	@media (min-width: map-get($breackpoints, lg)) {
+		@content;
+	}
+}
+
+//Только ширина
+
+@mixin sm {
+	@media (max-width: map-get($breackpoints, sm) - 0.2px) and (min-width: map-get($breackpoints, sm)) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media (max-width: map-get($breackpoints, md) - 0.2px) and (min-width: map-get($breackpoints, sm)) {
+		@content;
+	}
+}
+
+@mixin lg {
+	@media (max-width: map-get($breackpoints, lg) - 0.2px) and (min-width: map-get($breackpoints, md)) {
+		@content;
+	}
+}
+
+@mixin xl {
+	@media (min-width: map-get($breackpoints , xl)) {
+		@content;
+	}
+}
+
+//Мобильный размер
+
+@mixin lg-d {
+	@media (max-width: map-get($breackpoints, lg) - 0.2px) {
+		@content;
+	}
+}
+
+@mixin md-d {
+	@media (max-width: map-get($breackpoints, md) - 0.2px) {
+		@content;
+	}
+}
+
+@mixin sm-d {
+	@media (max-width: map-get($breackpoints, sm) - 0.2px) {
+		@content;
+	}
+}

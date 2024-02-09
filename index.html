@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>KMF - Демеу</title>
+    <title data-lang="title-lang">KMF - Демеу</title>
 </head>
+
 <body>
     <header class="header__top">
         <nav class="header__top-nav">
@@ -23,42 +25,49 @@
                     <ul class="list__menu">
 
                         <li class="list__menu-item">
-                            <a class="list__item-link" href="#">Пройти тест</a>
+                            <a class="list__item-link" href="#" data-lang="nav-menu-1">Пройти тест</a>
                         </li>
                         <li class="list__menu-item">
-                            <a class="list__item-link" href="#">Подать заявку на тренинг</a>
+                            <a class="list__item-link" href="#" data-lang="nav-menu-2">Подать заявку на тренинг</a>
                         </li>
-                        
+
                     </ul>
 
                     <div class="search__box">
 
                         <button type="button" class="search__box-button">
-                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14.0793 7.52083C14.0793 11.2704 11.0854 14.2917 7.41463 14.2917C3.74388 14.2917 0.75 11.2704 0.75 7.52083C0.75 3.77131 3.74388 0.75 7.41463 0.75C11.0854 0.75 14.0793 3.77131 14.0793 7.52083Z" stroke="#393939" stroke-width="1.5"/>
-                                <path d="M10.9268 12.6667L15.9999 19.0001" stroke="#393939" stroke-width="1.5"/>
-                            </svg>                            
+                            <svg width="17" height="20" viewBox="0 0 17 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M14.0793 7.52083C14.0793 11.2704 11.0854 14.2917 7.41463 14.2917C3.74388 14.2917 0.75 11.2704 0.75 7.52083C0.75 3.77131 3.74388 0.75 7.41463 0.75C11.0854 0.75 14.0793 3.77131 14.0793 7.52083Z"
+                                    stroke="#393939" stroke-width="1.5" />
+                                <path d="M10.9268 12.6667L15.9999 19.0001" stroke="#393939" stroke-width="1.5" />
+                            </svg>
                         </button>
 
                         <form class="search__container">
-                            
+
                             <div class="search__box-form">
-    
-                                <svg class="search__icon" width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14.0793 7.52083C14.0793 11.2704 11.0854 14.2917 7.41463 14.2917C3.74388 14.2917 0.75 11.2704 0.75 7.52083C0.75 3.77131 3.74388 0.75 7.41463 0.75C11.0854 0.75 14.0793 3.77131 14.0793 7.52083Z" stroke="#393939" stroke-width="1.5"/>
-                                    <path d="M10.9268 12.6667L15.9999 19.0001" stroke="#393939" stroke-width="1.5"/>
-                                </svg>  
-        
+
+                                <svg class="search__icon" width="17" height="20" viewBox="0 0 17 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M14.0793 7.52083C14.0793 11.2704 11.0854 14.2917 7.41463 14.2917C3.74388 14.2917 0.75 11.2704 0.75 7.52083C0.75 3.77131 3.74388 0.75 7.41463 0.75C11.0854 0.75 14.0793 3.77131 14.0793 7.52083Z"
+                                        stroke="#393939" stroke-width="1.5" />
+                                    <path d="M10.9268 12.6667L15.9999 19.0001" stroke="#393939" stroke-width="1.5" />
+                                </svg>
+
                                 <input class="search__input" type="text" placeholder="Поиск">
 
-        
+
                                 <button type="button" class="search__button-input">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
-                                        <path d="M1 17.2634L17.2635 0.999971" stroke="#393939"/>
-                                        <path d="M17.6455 17.2634L1.38205 0.999971" stroke="#393939"/>
-                                        </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"
+                                        fill="none">
+                                        <path d="M1 17.2634L17.2635 0.999971" stroke="#393939" />
+                                        <path d="M17.6455 17.2634L1.38205 0.999971" stroke="#393939" />
+                                    </svg>
                                 </button>
-        
+
                             </div>
 
                             <ul class="search__result-list"></ul>
@@ -66,39 +75,48 @@
 
                         </form>
 
-                    </div>   
+                    </div>
 
                 </div>
-            
-                <div class="header__action">
- 
 
-                    <ul class="language__list">
-                        <li class="language__list-item">
-                            <a class="language__item-link" href="#">RU</a>
-                            <ul class="language__sublist">
-                                <li class="language__sublist-item">
-                                    <a class="language__sublist-link" href="#">KZ</a>
+                <div class="header__action">
+
+                    <div class="language__container">
+
+                        <button class="language__button"></button>
+
+                        <div class="language__dropdown">
+                            <ul class="language__list">
+                                <li class="language__item" data-btn="ru">
+                                    <a class="language__link" href="#ru">RU</a>
                                 </li>
-                                <li class="language__sublist-item">
-                                    <a class="language__sublist-link" href="#">EN</a>
+                                <li class="language__item" data-btn="kz">
+                                    <a class="language__link" href="#kz">KZ</a>
+                                </li>
+                                <li class="language__item" data-btn="en">
+                                    <a class="language__link" href="#en">EN</a>
                                 </li>
                             </ul>
-                        </li>
-                    </ul>
-
-                    <div class="action__burger">
-                        <div class="burger__menu">
-                            <span class="burger-line"></span>
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
+
         </nav>
+
+        <div class="action__burger">
+            <div class="burger__menu">
+                <span class="burger-line"></span>
+            </div>
+        </div>
+
     </header>
+
 
     <script src="./js/script.js"></script>
 </body>
+
 </html>
