@@ -82,7 +82,7 @@ const languageBtn = document.querySelector('.language__button'),
 	windowLocation = window.location.pathname
 
 let currentText = {},
-	currentLang = localStorage.getItem('language') || checkBrowserLang() || 'ru'
+	currentLang = localStorage.getItem('language') || checkLang() || 'ru'
 
 const homeLang = {
 	'title-lang': {
