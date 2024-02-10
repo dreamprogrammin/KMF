@@ -123,6 +123,7 @@
 		height: 100%;
 		background-color: $color-body;
 		position: relative;
+		color: $color-vector;
 	}
 
 	&__input {
@@ -218,6 +219,7 @@
 		background-color: $color-body;
 		transition: 0.3s ease-in-out;
 		font-size: 14px;
+		color: $color-decor;
 		&:hover {
 			background-color: $color-hover;
 			color: $color-body;

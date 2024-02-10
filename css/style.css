@@ -70,7 +70,7 @@ img {
 
 @font-face {
   font-family: 'RF Dewi';
-  src: local("RF Dewi Black"), local("RF-Dewi-Black"), url("/fonts/RFDewi-Black.woff2") format("woff2"), url("/fonts/RFDewi-Black.woff") format("woff"), url("/fonts/RFDewi-Black.ttf") format("truetype");
+  src: local("RF Dewi Black"), local("RF-Dewi-Black"), url("../../fonts/RFDewi-Black.woff") format("woff2"), url("/fonts/RFDewi-Black.woff") format("woff"), url("/fonts/RFDewi-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: bold;
 }
@@ -238,6 +238,7 @@ body {
   height: 100%;
   background-color: #f6f6f6;
   position: relative;
+  color: #bababa;
 }
 .search__input {
   width: 100%;
@@ -327,6 +328,7 @@ body {
   background-color: #f6f6f6;
   transition: 0.3s ease-in-out;
   font-size: 14px;
+  color: #000;
 }
 .language__button:hover {
   background-color: #f86436;
