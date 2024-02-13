@@ -214,6 +214,7 @@ body {
 }
 .search__icon {
   margin-left: 20px;
+  color: #000;
 }
 .search__box-form {
   display: flex;
