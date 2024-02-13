@@ -71,8 +71,8 @@ img {
 @font-face {
   font-family: 'RF Dewi';
   font-display: swap;
-  src: url("../../fonts/RFDewi-Semibold.eot");
-  src: local("O"), url("../../fonts/RFDewi-Semibold.woff") format("woff"), url("../../fonts/RFDewi-Semibold.ttf") format("truetype"), url("../../fonts/RFDewi-Semibold.svg") format("svg");
+  src: url(../../fonts/RFDewi-Semibold.eot);
+  src: local("O"), url(../../fonts/RFDewi-Semibold.woff) format("woff"), url(../../fonts/RFDewi-Semibold.ttf) format("truetype"), url(../../fonts/RFDewi-Semibold.svg) format("svg");
   font-weight: 600;
   font-style: semibold;
 }
