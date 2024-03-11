@@ -23,7 +23,8 @@ actionBurger.addEventListener('click', () =>
 
 //скрипт для поиска
 const searchInput = document.querySelector('.search__input'),
-	searchResult = document.querySelector('.search__result-list')
+	searchResult = document.querySelector('.search__result-list'),
+	allLangs = ['ru', 'kz', 'en']
 //Переменная для хранения языков
 let currentLang = localStorage.getItem('language') || checkLang() || 'ru'
 //Пустой массив для отправку данных
@@ -33,7 +34,7 @@ const dataApi = `
 https://gist.githubusercontent.com/dreamprogrammin/86058002b04bede9f0c80f50a9be0683/raw/
 f66468ef0831392454196a2369dd7a3b5b3e9da1/data.json
 `
-//Запрос данных на сервер
+//Запрос get данных на сервер
 const getData = async url => {
 	try {
 		const response = await fetch(url),
@@ -110,7 +111,6 @@ searchInput.addEventListener('keyup', dysplayResult)
 
 const languageBtn = document.querySelector('.language__button'),
 	languageItems = document.querySelectorAll('[data-btn]'),
-	allLangs = ['ru', 'kz', 'en'],
 	windowLocation = window.location.pathname
 
 let currentText = {}
