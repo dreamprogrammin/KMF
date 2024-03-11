@@ -24,56 +24,88 @@ actionBurger.addEventListener('click', () =>
 //скрипт для поиска
 const searchInput = document.querySelector('.search__input'),
 	searchResult = document.querySelector('.search__result-list')
-
-const api = `
-https://gist.githubusercontent.com/dreamprogrammin/
-6fd488a88223921fccb0d0ec2e464e74/raw/61f96a1576f25eb3d393aa035b1f7b114946367c/data-kmf.json`
-
+//Переменная для хранения языков
+let currentLang = localStorage.getItem('language') || checkLang() || 'ru'
+//Пустой массив для отправку данных
 const dataResults = []
-
-fetch(api).then(res =>
-	res.json().then(data => data.forEach(result => dataResults.push(result)))
-)
-
-console.log(dataResults)
-
-function getResult(word, dataResults) {
-	return dataResults.filter(s => {
-		const regex = new RegExp(word, 'gi')
-
-		return s.name.match(regex)
-	})
-}
-
-function displayResults() {
-	const dataResult = data =>
-		`<li class="search__result-item"><p class="result__item-data">${data}</p></li>`
-
-	const results = getResult(this.value, dataResults)
-
-	const html = results
-		.map(s => {
-			const regex = new RegExp(this.value, 'gi')
-			const resultsName = s.name.replace(
-				regex,
-				`<strong class="font__weight">${this.value}</strong>`
-			)
-
-			return `<li class="search__result-item"><a class="search__result-link" href="#">${resultsName}</a></li>`
-		})
-		.join('')
-
-	if (!results.length == 0 && !this.value == '') {
-		searchResult.innerHTML =
-			dataResult(`Найдено ${results.length} результата поиска`) + html
-	} else {
-		searchResult.innerHTML = dataResult('ничего не найдено') + ''
+//url Хранилище данных для поиска
+const dataApi = `
+https://gist.githubusercontent.com/dreamprogrammin/86058002b04bede9f0c80f50a9be0683/raw/
+f66468ef0831392454196a2369dd7a3b5b3e9da1/data.json
+`
+//Запрос данных на сервер
+const getData = async url => {
+	try {
+		const response = await fetch(url),
+			data = await response.json()
+		return data
+	} catch (err) {
+		console.log('не удость подлючится к серверу')
 	}
 }
 
-searchInput.addEventListener('change', displayResults)
-searchInput.addEventListener('keyup', displayResults)
+//Фильтрация данных по языку сайта
+getData(dataApi).then(data => {
+	const filterData = data.filter(item =>
+		item.lang === currentLang ? true : false
+	)
 
+	return dataResults.push(...filterData)
+})
+
+//Поиск совпадений тескста в отфильтрованном массиве
+const matchesData = (word, array) => {
+	return array.filter(item => {
+		const regexp = new RegExp(word, 'gi')
+
+		return item.name.match(regexp)
+	})
+}
+//Получения данных и вывод на страницу
+function dysplayResult() {
+	const options = matchesData(this.value, dataResults)
+
+	const html = options
+		.map(item => {
+			const regexp = new RegExp(this.value, 'gi')
+			const repName = item.name.replace(
+				regexp,
+				`<span class="hl">${this.value}</span>`
+			)
+			return `<li class="search__result-item">
+			<a class="search__result-link">${repName}</a>
+			</li>`
+		})
+		.join('')
+	console.log(options.length)
+	return (searchResult.innerHTML = this.value
+		? checkDataLangResult(options) + html
+		: null)
+}
+//Функция для вывода количества найденых результатов
+function checkDataLangResult(array) {
+	//Обьект для разметки
+	const resultLang = [
+		{ name: `Найдено ${array.length} результата поиска`, lang: 'ru' },
+		{ name: `${array.length} іздеу нәтижесі табылды`, lang: 'kz' },
+		{ name: `${array.length} search results found`, lang: 'en' },
+	]
+	//Фильтрация по языку
+	const filterResultLang = resultLang.filter(item =>
+		item.lang === currentLang ? true : false
+	)
+	//Разметка для вывода в HTML страницу
+	const getDataResultLang = filterResultLang.map(item => {
+		return `<li class="search__result-item">
+		<p class="result__item-data">${item.name}</p>
+		</li>`
+	})
+
+	return getDataResultLang
+}
+//Слушатели
+searchInput.addEventListener('change', dysplayResult)
+searchInput.addEventListener('keyup', dysplayResult)
 //Скрипт для мультизачности сайта
 
 const languageBtn = document.querySelector('.language__button'),
@@ -81,8 +113,7 @@ const languageBtn = document.querySelector('.language__button'),
 	allLangs = ['ru', 'kz', 'en'],
 	windowLocation = window.location.pathname
 
-let currentText = {},
-	currentLang = localStorage.getItem('language') || checkLang() || 'ru'
+let currentText = {}
 
 const homeLang = {
 	'title-lang': {
@@ -137,6 +168,7 @@ languageItems.forEach(btn =>
 		localStorage.setItem('language', btn.dataset.btn)
 		lngContent()
 		changeLang()
+		location.reload()
 	})
 )
 function checkLang() {

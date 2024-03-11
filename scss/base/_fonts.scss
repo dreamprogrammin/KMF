@@ -1,6 +1,37 @@
 @font-face {
-	font-family: 'RF-dewi';
-	font-weight: semibold;
-	src: url('../../fonts/RFDewi-Semibold.woff') format('woff'),
-		url('../../fonts/RFDewi-Semibold.woff2') format('woff2');
+	font-family: 'RF Dewi';
+	font-display: swap;
+	src: url('../fonts/font-bold/rfdewi-boldfont.eot');
+	src: local('O'), url('../fonts/font-bold/rfdewi-boldfont.woff') format('woff'),
+		url('../fonts/font-bold/rfdewi-boldfont.woff2') format('woff2'),
+		url('../fonts/font-bold/rfdewi-boldfont.ttf') format('truetype'),
+		url('../fonts/font-bold/rfdewi-boldfont.svg') format('svg');
+	font-weight: 700;
+	font-style: bold;
+}
+
+@font-face {
+	font-family: 'RF Dewi';
+	font-display: swap;
+	src: url('../fonts/font-semibold/rfdewi-semiboldfont.eot');
+	src: local('O'),
+		url('../fonts/font-semibold/rfdewi-semiboldfont.woff') format('woff'),
+		url('../fonts/font-semibold/rfdewi-semiboldfont.woff2') format('woff2'),
+		url('../fonts/font-semibold/rfdewi-semiboldfont.ttf') format('truetype'),
+		url('../fonts/font-semibold/rfdewi-semiboldfont.svg') format('svg');
+	font-weight: 600;
+	font-style: semi-bold;
+}
+
+@font-face {
+	font-family: 'RF Dewi';
+	font-display: swap;
+	src: url('../fonts/font-regular/rfdewi-regularfont.eot');
+	src: local('O'),
+		url('../fonts/font-regular/rfdewi-regularfont.woff') format('woff'),
+		url('../fonts/font-regular/rfdewi-regularfont.woff2') format('woff2'),
+		url('../fonts/font-regular/rfdewi-regularfont.ttf') format('truetype'),
+		url('../fonts/font-regular/rfdewi-regularfont.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
 }

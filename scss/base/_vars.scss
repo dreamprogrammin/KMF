@@ -26,3 +26,15 @@ $breackpoints: (
 	lg: 1024px,
 	xl: 1280px,
 );
+
+@mixin mobile-hover {
+	@media (hover: none), (pointer: course) {
+		@content;
+	}
+}
+
+@mixin dekstop-hover {
+	@media (hover: hover), (pointer: fine) {
+		@content;
+	}
+}

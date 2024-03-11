@@ -78,6 +78,9 @@
 		display: inline-block;
 		color: $color-decor;
 		line-height: 71px;
+		font-weight: 600;
+		color: $color-title;
+		font-size: 14px;
 		&:hover {
 			color: $color-hover;
 		}
@@ -93,9 +96,16 @@
 		height: 71px;
 		background-color: inherit;
 		border-left: 1px solid $color-vector;
-		&:hover {
-			color: white;
-			background-color: $color-hover;
+		@include dekstop-hover {
+			&:hover {
+				color: $color-background;
+				background-color: $color-hover;
+			}
+		}
+		@include mobile-hover {
+			&:active {
+				background-color: $color-hover;
+			}
 		}
 	}
 
@@ -115,7 +125,7 @@
 
 	&__icon {
 		margin-left: 20px;
-		color:$color-decor;
+		color: $color-decor;
 	}
 
 	&__box-form {
@@ -166,6 +176,8 @@
 		position: relative;
 		padding-bottom: 15px;
 		color: $color-decor;
+		font-size: 12px;
+		font-weight: normal;
 		&::before {
 			position: absolute;
 			content: '';
@@ -221,6 +233,7 @@
 		transition: 0.3s ease-in-out;
 		font-size: 14px;
 		color: $color-decor;
+		font-weight: 400;
 		&:hover {
 			background-color: $color-hover;
 			color: $color-body;
@@ -248,6 +261,7 @@
 		display: block;
 		text-align: center;
 		color: $color-decor;
+		font-weight: 400;
 		&:hover {
 			color: $color-hover;
 		}
@@ -261,9 +275,16 @@
 		color: $color-decor;
 		@include flex-container(center, center);
 		border-left: 1px solid $color-vector;
-		&:hover {
-			background-color: $color-hover;
-			color: #fff;
+		@include dekstop-hover {
+			&:hover {
+				color: $color-background;
+				background-color: $color-hover;
+			}
+		}
+		@include mobile-hover {
+			&:active {
+				background-color: $color-hover;
+			}
 		}
 	}
 }

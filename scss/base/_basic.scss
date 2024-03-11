@@ -1,7 +1,7 @@
 body {
-	font-family: 'RF-Dewi';
+	font-family: 'RF Dewi';
 	background: $color-body;
-	font-weight: semibold;
+	font-weight: 400;
 }
 
 .container {
@@ -10,4 +10,9 @@ body {
 
 .font__weight {
 	font-weight: 600;
+}
+
+.hl {
+	font-weight: bold;
+	font-size: 13px;
 }
