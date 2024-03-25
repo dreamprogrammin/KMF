@@ -1,7 +1,9 @@
-body {
+body,
+html {
 	font-family: 'RF Dewi';
 	background: $color-body;
 	font-weight: 400;
+	color: $color-decor;
 }
 
 .container {

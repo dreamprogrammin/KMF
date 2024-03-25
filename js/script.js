@@ -12,14 +12,47 @@ seacrgBtnInput.addEventListener('click', () => {
 	}
 })
 
-//Burger animation
-
+//Burger animation and burger script
+//Переменные для связки DOM элементов
 const actionBurger = document.querySelector('.action__burger'),
-	burgerMenu = document.querySelector('.burger__menu')
-
-actionBurger.addEventListener('click', () =>
+	burgerMenu = document.querySelector('.burger__menu'),
+	headerPoppup = document.querySelector('.header__poppup'),
+	navTopWrapper = document.querySelector('.header__top'),
+	headerBurgerTop = document.querySelector('.header__poppup-top'),
+	headerListMenuItems = document.querySelector('#list__menu').cloneNode(1),
+	buttonParent = actionBurger.parentElement
+//Функция для иницилизации анимации бургер меню
+const initBurgerMenu = () => {
 	burgerMenu.classList.toggle('active')
-)
+	headerPoppup.classList.toggle('active')
+	renderMenuBurger()
+}
+
+//Функция для копирование верхнего меню в бургер меню
+function renderMenuBurger() {
+	headerPoppup.appendChild(headerListMenuItems)
+	const mi = document.querySelectorAll('#list__menu li a')
+	return mi.forEach((element, index) => {
+		element.setAttribute('data-lang', 'nav-menu-' + index)
+		changeLang()
+	})
+}
+//Функция для переноса кнопки
+function moveButton() {
+	headerBurgerTop.appendChild(actionBurger)
+	//Обратный вызов функции для возврата кнопки в прежднее место
+	actionBurger.onclick = returnButton
+}
+//Функция для переноса кнопки в бургер меню
+function returnButton() {
+	buttonParent.appendChild(actionBurger)
+	//Обратный вызов функции для переноса кнопки
+	actionBurger.onclick = moveButton
+}
+//Клик по кнопки и вызов функции
+actionBurger.onclick = moveButton
+//Обраточки событиий функции
+actionBurger.addEventListener('click', initBurgerMenu)
 
 //скрипт для поиска
 const searchInput = document.querySelector('.search__input'),
@@ -121,12 +154,22 @@ const homeLang = {
 		kz: 'KMF - Демеу',
 		en: 'KMF - Finance',
 	},
-	'nav-menu-1': {
+	'nav-menu-0': {
 		ru: 'Пройти тест',
 		kz: 'Тест тапсырыңыз',
 		en: 'Take the test',
 	},
+	'nav-menu-1': {
+		ru: 'Подать заявку на тренинг',
+		kz: 'Оқуға өтініш беріңіз',
+		en: 'Apply for training',
+	},
 	'nav-menu-2': {
+		ru: 'Пройти тест',
+		kz: 'Тест тапсырыңыз',
+		en: 'Take the test',
+	},
+	'nav-menu-3': {
 		ru: 'Подать заявку на тренинг',
 		kz: 'Оқуға өтініш беріңіз',
 		en: 'Apply for training',

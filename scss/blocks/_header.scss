@@ -20,6 +20,9 @@
 			position: relative;
 		}
 	}
+	&__wrapper {
+		@include flex-container(center, center);
+	}
 
 	&__action {
 		@include flex-container(center, center);
@@ -30,6 +33,9 @@
 		position: relative;
 		@include md-d {
 			position: static;
+			& .list__menu {
+				display: none;
+			}
 		}
 	}
 }
@@ -49,10 +55,6 @@
 .list {
 	&__menu {
 		@include flex-container(center, center);
-
-		@include md-d {
-			display: none;
-		}
 	}
 
 	&__menu-item {
@@ -81,8 +83,15 @@
 		font-weight: 600;
 		color: $color-title;
 		font-size: 14px;
-		&:hover {
-			color: $color-hover;
+		@include dekstop-hover {
+			&:hover {
+				color: $color-hover;
+			}
+		}
+		@include mobile-hover {
+			&:active {
+				background-color: $color-hover;
+			}
 		}
 	}
 }
@@ -293,6 +302,7 @@
 		position: relative;
 		height: 12px;
 		width: 23px;
+		z-index: 4;
 		&::after,
 		&::before,
 		& .burger-line {
@@ -327,6 +337,98 @@
 		&.active::after {
 			bottom: 50%;
 			transform: rotate(45deg) translate(0, 50%);
+		}
+	}
+}
+
+//Стилизация всплывающего меню после клика на бургер меню
+
+.header {
+	&__poppup {
+		height: 100dvh;
+		width: 100%;
+		display: none;
+		background-color: $color-background;
+		position: absolute;
+		right: 0;
+		top: 0;
+		&.active {
+			display: block;
+		}
+		@include md-u {
+			& .list__menu {
+				display: none;
+			}
+		}
+		& > .list__menu {
+			border: 1px solid $color-vector;
+			border-width: 1px 0;
+			justify-content: space-between;
+			& > .list__menu-item {
+				padding: 28px 32px;
+				& > .list__item-link {
+					line-height: 1;
+				}
+			}
+		}
+	}
+	&__poppup-top {
+		@include flex-container(space-between, center);
+	}
+}
+
+.burger {
+	&__caption-text {
+		height: 71px;
+		line-height: 71px;
+		margin-left: 38px;
+		font-weight: 400;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+}
+
+.burger {
+	&__container {
+		padding: 46px 0;
+		@include md-d {
+			padding: 30.74px 0;
+		}
+	}
+
+	&__list {
+		@include flex-container(center, flex-start);
+		flex-direction: column;
+		height: 100%;
+		@include md-d {
+			margin-bottom: 35px;
+		}
+	}
+
+	&__list-item {
+		padding: 25px 0;
+		width: 100%;
+		&:first-child {
+			padding: 16px 0;
+			border-bottom: 1px solid $color-vector;
+		}
+		border-bottom: 1px solid $color-vector;
+		@include md-d {
+			padding: 15px;
+			&:first-child {
+				padding-left: 15px;
+			}
+		}
+	}
+
+	&__item-link {
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		margin: 0 32px;
+		color: $color-decor;
+		font-size: 20px;
+		@include md-d {
+			font-size: 14px;
 		}
 	}
 }
